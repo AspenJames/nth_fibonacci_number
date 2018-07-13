@@ -1,8 +1,8 @@
-# _n_th Fibonacci Number
+# *nth* Fibonacci Number
 
-This is a simple command line interface to generate the _n_th Fibonacci number written in Rust
+This is a simple command line interface to generate the *nth* Fibonacci number written in Rust
 
-## License 
+## License
 
 This project is licensed under the [GNU General Public License v3.0](https://github.com/AspenJames/nth_fibonacci_number/blob/master/LICENSE).
 
