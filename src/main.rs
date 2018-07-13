@@ -5,7 +5,8 @@ fn main() {
     println!("Enter which number you'd like to generate:");
     // store return from our get_input function
     let n = get_input();
-    println!("Input was {}", n); // check that get_input works
+    let fib_num = generate_fib_num(&n);
+    println!("The Fibonacci Number at position {} is {}", n, fib_num);
 }
 
 fn get_input() -> u32 {
@@ -21,9 +22,19 @@ fn get_input() -> u32 {
         // if not, display an error message and
         // recall get_input function
         Err(e) => {
-            println!("Please input a number ({})", e);
+            println!("Please input a positive, whole number ({})", e);
             get_input()
         }
     };
     input // move ownership back to main
+}
+
+fn generate_fib_num(n: &u32) -> u32 {
+    if *n <= 1 {
+        // return n if it is less than or equal to 1
+        *n
+    } else {
+        // recursively add preceeding two values for n > 1
+        generate_fib_num(&(n-1)) + generate_fib_num(&(n-2))
+    }
 }
